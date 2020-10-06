@@ -6,7 +6,7 @@
 	<img src="assets/img/evening.svg" alt="Imagem de boa tarde">
 	<h1>{{ message.slip.advice }}</h1>
 </nav>
-<nav *ngIf="(hour >= 18 && hour <= 23) || (hour > 0 && hour < 6)" class="p-d-flex p-flex-column">
+<nav *ngIf="(hour >= 18 && hour <= 23) || (hour >= 0 && hour < 6)" class="p-d-flex p-flex-column">
 	<img src="assets/img/night.svg" alt="Imagem de boa noite">
 	<h1>{{ message.slip.advice }}</h1>
 </nav>
