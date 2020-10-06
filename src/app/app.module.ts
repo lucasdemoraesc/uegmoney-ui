@@ -9,6 +9,13 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
 import { ToastModule } from 'primeng/toast';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputMaskModule } from 'primeng/inputmask';
+import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
+import {FieldsetModule} from 'primeng/fieldset';
+import {TooltipModule} from 'primeng/tooltip';
+
 
 import { EventEmitterService } from './services/event-emitter.service';
 
@@ -18,6 +25,9 @@ import { SidebarComponent } from './components/templates/sidebar/sidebar.compone
 import { LaunchComponent } from './components/view/launch/launch.component';
 import { WellcomeComponent } from './components/view/wellcome/wellcome.component';
 import { PageNotFoundComponent } from './components/view/page-not-found/page-not-found.component';
+import { LaunchSearchComponent } from './components/view/launch/launch-search/launch-search.component';
+import { LaunchListComponent } from './components/view/launch/launch-list/launch-list.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +36,9 @@ import { PageNotFoundComponent } from './components/view/page-not-found/page-not
     SidebarComponent,
     LaunchComponent,
     WellcomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LaunchSearchComponent,
+    LaunchListComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +49,13 @@ import { PageNotFoundComponent } from './components/view/page-not-found/page-not
     SidebarModule,
     MenuModule,
     ToastModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextModule,
+    InputMaskModule,
+    CardModule,
+    TableModule,
+    FieldsetModule,
+    TooltipModule
   ],
   providers: [
     EventEmitterService

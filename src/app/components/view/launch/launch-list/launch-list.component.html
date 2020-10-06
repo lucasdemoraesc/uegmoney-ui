@@ -1,0 +1,40 @@
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-table [value]="lancamentos" [columns]="cols" [paginator]="true" [rows]="5" styleClass="p-datatable-responsive-demo">
+            <ng-template pTemplate="caption">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    Lançamentos
+                    <p-button icon="pi pi-refresh"></p-button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of cols">
+                        {{col.header}}
+                    </th>
+                    <th class="acoes">
+                        Ações
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-lancamento>
+                <tr>
+                    <td *ngFor="let col of cols">
+                        <span class="p-column-title">{{col.header}}</span>
+                        {{lancamento[col.field]}}
+                    </td>
+                    <td class="acoes">
+                        <button pButton icon="pi pi-pencil" style="margin-right: 0.5em;" pTooltip="Editar" tooltipPosition="top"></button>
+                        <button pButton icon="pi pi-trash" style="color: firebrick;" pTooltip="Excluir" tooltipPosition="top"></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    Total de Lançamentos: {{lancamentos ? lancamentos.length : 0 }}
+                </div>
+            </ng-template>
+        </p-table>
+
+    </div>
+</div>
