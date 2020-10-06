@@ -16,7 +16,7 @@ export class TopbarComponent implements OnInit {
   }
 
   callSideBar() {
-    this.eventEmitterService.sendSideBar();
+    this.eventEmitterService.sendShowSidebar();
   }
 
 }

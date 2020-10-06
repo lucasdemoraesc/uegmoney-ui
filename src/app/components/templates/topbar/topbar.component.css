@@ -1,7 +1,3 @@
-.logo {
-	max-height: 00px;
-}
-
 i {
 	cursor: pointer;
 	opacity: 100%;
@@ -9,10 +5,10 @@ i {
 }
 
 i:hover {
-	opacity: 65%;
+	opacity: 75%;
 	transition: opacity 1s;
 }
 
 .social-links i {
-	color: initial;
+	color: #E2E2E5;
 }

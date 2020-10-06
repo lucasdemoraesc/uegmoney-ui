@@ -10,11 +10,11 @@ export class EventEmitterService {
 
   constructor() { }
 
-  sendSideBar() {
+  sendShowSidebar() {
     this.subject.next();
   }
 
-  getClickEvent(): Observable<any>{
+  getShowSidebarEvent(): Observable<any>{
     return this.subject.asObservable();
   }
 }

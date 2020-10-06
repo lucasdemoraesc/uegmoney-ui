@@ -1,5 +1,9 @@
-<p-sidebar [(visible)]="visibility" [baseZIndex]="10000">
-    <h1 style="font-weight:normal">Left Sidebar</h1>
-    <p-button type="button" (click)="visibility = false" label="Save" styleClass="p-button-success"></p-button>
-    <p-button type="button" (click)="visibility = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+<p-sidebar class="p-d-flex p-flex-column" [(visible)]="visibility" [baseZIndex]="10000" [style]="{width:'16em'}">
+    <header routerLink="/" (click)="visibility = false">
+        <h1 style="font-weight:normal">UEG Money</h1>
+    </header>
+
+    <nav class="menu">
+        <p-menu [model]="items" [style]="{border:'none'}" (click)="visibility = false"></p-menu>
+    </nav>
 </p-sidebar>

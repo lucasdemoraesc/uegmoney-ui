@@ -1,0 +1,4 @@
+enum LaunchType {
+	RECEIVED,
+	EXPENSE
+}
