@@ -6,15 +6,15 @@ import { Observable, Subject } from 'rxjs';
 })
 export class EventEmitterService {
 
-  private subject = new Subject<any>();
+  private sidebarSubject = new Subject<any>();
 
   constructor() { }
 
   sendShowSidebar() {
-    this.subject.next();
+    this.sidebarSubject.next();
   }
 
   getShowSidebarEvent(): Observable<any>{
-    return this.subject.asObservable();
+    return this.sidebarSubject.asObservable();
   }
 }

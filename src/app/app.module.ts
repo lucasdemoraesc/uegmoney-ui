@@ -13,20 +13,26 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
-import {FieldsetModule} from 'primeng/fieldset';
-import {TooltipModule} from 'primeng/tooltip';
+import { FieldsetModule } from 'primeng/fieldset';
+import { TooltipModule } from 'primeng/tooltip';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import {DialogModule} from 'primeng/dialog';
 
-
-import { EventEmitterService } from './services/event-emitter.service';
+import { EventEmitterService } from './components/templates/sidebar/event/event-emitter.service';
 
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/templates/topbar/topbar.component';
 import { SidebarComponent } from './components/templates/sidebar/sidebar.component';
-import { LaunchComponent } from './components/view/launch/launch.component';
-import { WellcomeComponent } from './components/view/wellcome/wellcome.component';
-import { PageNotFoundComponent } from './components/view/page-not-found/page-not-found.component';
-import { LaunchSearchComponent } from './components/view/launch/launch-search/launch-search.component';
-import { LaunchListComponent } from './components/view/launch/launch-list/launch-list.component';
+import { LaunchComponent } from './components/launch/launch.component';
+import { WellcomeComponent } from './components/templates/wellcome/wellcome.component';
+import { PageNotFoundComponent } from './components/templates/page-not-found/page-not-found.component';
+import { LaunchSearchComponent } from './components/launch/launch-search/launch-search.component';
+import { LaunchListComponent } from './components/launch/launch-list/launch-list.component';
+import { PersonComponent } from './components/person/person.component';
+import { PersonListComponent } from './components/person/person-list/person-list.component';
+import { PersonSearchComponent } from './components/person/person-search/person-search.component';
+import { LaunchCreateComponent } from './components/launch/launch-create/launch-create.component';
 
 
 @NgModule({
@@ -38,7 +44,11 @@ import { LaunchListComponent } from './components/view/launch/launch-list/launch
     WellcomeComponent,
     PageNotFoundComponent,
     LaunchSearchComponent,
-    LaunchListComponent
+    LaunchListComponent,
+    PersonComponent,
+    PersonListComponent,
+    PersonSearchComponent,
+    LaunchCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +65,10 @@ import { LaunchListComponent } from './components/view/launch/launch-list/launch
     CardModule,
     TableModule,
     FieldsetModule,
-    TooltipModule
+    TooltipModule,
+    CheckboxModule,
+    ConfirmDialogModule,
+    DialogModule
   ],
   providers: [
     EventEmitterService

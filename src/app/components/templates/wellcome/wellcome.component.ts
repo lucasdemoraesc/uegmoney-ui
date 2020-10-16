@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WellcomeMessage } from '../../../models/wellcome-message.model';
-import { WellcomeService } from '../../../services/wellcome.service';
+import { WellcomeMessage } from './model/wellcome-message.model';
+import { WellcomeService } from './service/wellcome.service';
 
 @Component({
   selector: 'app-wellcome',

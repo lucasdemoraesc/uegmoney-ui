@@ -1,0 +1,56 @@
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-table [value]="pessoas" [columns]="cols" [paginator]="true" [rows]="5"
+            styleClass="p-datatable-responsive-demo">
+            <ng-template pTemplate="caption">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    Pessoas
+                    <p-button icon="pi pi-plus" pTooltip="Cadastrar" tooltipPosition="top"></p-button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of cols">
+                        {{col.header}}
+                    </th>
+                    <th class="acoes">
+                        Ações
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-person>
+                <tr>
+                    <td>
+                        <span class="p-column-title">Nome</span>
+                        {{ person.nome }}
+                    </td>
+                    <td>
+                        <span class="p-column-title">Cidade</span>
+                        {{ person.cidade }}
+                    </td>
+                    <td>
+                        <span class="p-column-title">Estado</span>
+                        {{ person.estado }}
+                    </td>
+                    <td>
+                        <span class="p-column-title">Status</span>
+                        <a href="javascript:;" [pTooltip]="person.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top">
+                            {{ person.ativo ? 'Ativo' : 'Inativo' }}
+                        </a>
+                    </td>
+                    <td class="acoes">
+                        <button pButton icon="pi pi-pencil" style="margin-right: 0.5em;" pTooltip="Editar"
+                            tooltipPosition="top"></button>
+                        <button pButton icon="pi pi-trash" style="color: firebrick;" pTooltip="Excluir"
+                            tooltipPosition="top"></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    Total de Pessoas: {{pessoas ? pessoas.length : 0 }}
+                </div>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

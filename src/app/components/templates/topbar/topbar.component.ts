@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventEmitterService } from 'src/app/services/event-emitter.service';
+import { EventEmitterService } from 'src/app/components/templates/sidebar/event/event-emitter.service';
 
 @Component({
   selector: 'app-topbar',
