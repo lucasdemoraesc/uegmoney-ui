@@ -12,6 +12,19 @@ export class LaunchCreateComponent implements OnInit {
     { label: "Receita", value: "RECEIVED" },
     { label: "Despesa", value: "EXPENSE" }
   ];
+  categorias = [
+    { label: "Alimentação", value: 0 },
+    { label: "Transporte", value: 1 },
+    { label: "Mercado", value: 2 },
+    { label: "Moradia", value: 3 },
+    { label: "Salário", value: 4 },
+    { label: "Dividendos", value: 5 }
+  ]
+  pessoas = [
+    { label: "Lucas Moraes", value: 0 },
+    { label: "Sâmea Natasha", value: 1 },
+    { label: "Karine Moraes", value: 2 }
+  ]
 
   constructor() { }
 

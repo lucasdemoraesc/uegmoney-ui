@@ -28,11 +28,11 @@
 		</div>
 		<div class="p-field p-col-12 p-md-6">
 			<label>Categoria</label>
-			<input pInputText type="text">
+			<p-dropdown [options]="categorias" placeholder="Selecione uma categoria" optionLabel="label" [showClear]="true"></p-dropdown>
 		</div>
 		<div class="p-field p-col-12 p-md-6">
 			<label>Pessoa</label>
-			<input pInputText type="text">
+			<p-dropdown [options]="pessoas" [filter]="true" placeholder="Selecione uma pessoa" optionLabel="label" [showClear]="true"></p-dropdown>
 		</div>
 		<div class="p-field p-col-12">
 			<label>Observação</label>
