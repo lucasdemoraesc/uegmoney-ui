@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaunchListComponent implements OnInit {
 
-  createLaunchDialog: Boolean;
-
   lancamentos = [
     {
       tipo: 'DESPESA', descricao: 'Compra de pão', dataVencimento: new Date('2020/10/12'),

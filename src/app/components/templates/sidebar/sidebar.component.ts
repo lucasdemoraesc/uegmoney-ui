@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { EventEmitterService } from 'src/app/components/templates/sidebar/event/event-emitter.service';
+import { ShowSidebarService } from 'src/app/components/templates/sidebar/event/show-sidebar.service';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -14,8 +14,8 @@ export class SidebarComponent implements OnInit {
 	items: MenuItem[];
 	calledEventSubscription: Subscription;
 
-	constructor(private eventEmitterService: EventEmitterService) {
-		this.calledEventSubscription = this.eventEmitterService.getShowSidebarEvent()
+	constructor(private showSidebarService: ShowSidebarService) {
+		this.calledEventSubscription = this.showSidebarService.getShowSidebarEvent()
 			.subscribe(() => this.show());
 	}
 

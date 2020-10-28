@@ -1,3 +1,4 @@
+<app-launch-create></app-launch-create>
 <div class="p-grid">
     <div class="p-col-12">
         <p-table [value]="lancamentos" [columns]="cols" [paginator]="true" [rows]="5"
@@ -5,7 +6,11 @@
             <ng-template pTemplate="caption">
                 <div class="p-d-flex p-ai-center p-jc-between">
                     Lançamentos
-                    <p-button icon="pi pi-refresh" pTooltip="Recarregar" tooltipPosition="top"></p-button>
+                    <span>
+                        <p-button style="margin-right: 0.5em;" icon="pi pi-plus" pTooltip="Cadastrar"
+                            tooltipPosition="top"></p-button>
+                        <p-button icon="pi pi-refresh" pTooltip="Recarregar" tooltipPosition="top"></p-button>
+                    </span>
                 </div>
             </ng-template>
             <ng-template pTemplate="header">

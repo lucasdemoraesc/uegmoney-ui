@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventEmitterService } from 'src/app/components/templates/sidebar/event/event-emitter.service';
+import { ShowSidebarService } from 'src/app/components/templates/sidebar/event/show-sidebar.service';
 
 @Component({
   selector: 'app-topbar',
@@ -10,13 +10,13 @@ export class TopbarComponent implements OnInit {
 
   title = "Controle de Gastos";
 
-  constructor(private eventEmitterService: EventEmitterService) { }
+  constructor(private showSidebarService: ShowSidebarService) { }
 
   ngOnInit(): void {
   }
 
   callSideBar() {
-    this.eventEmitterService.sendShowSidebar();
+    this.showSidebarService.sendShowSidebar();
   }
 
 }

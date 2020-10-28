@@ -8,18 +8,13 @@ import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenuModule } from 'primeng/menu';
-import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
-import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { FieldsetModule } from 'primeng/fieldset';
 import { TooltipModule } from 'primeng/tooltip';
-import { CheckboxModule } from 'primeng/checkbox';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import {DialogModule} from 'primeng/dialog';
 
-import { EventEmitterService } from './components/templates/sidebar/event/event-emitter.service';
+import { ShowSidebarService } from './components/templates/sidebar/event/show-sidebar.service';
 
 import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/templates/topbar/topbar.component';
@@ -33,6 +28,7 @@ import { PersonComponent } from './components/person/person.component';
 import { PersonListComponent } from './components/person/person-list/person-list.component';
 import { PersonSearchComponent } from './components/person/person-search/person-search.component';
 import { LaunchCreateComponent } from './components/launch/launch-create/launch-create.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -58,20 +54,16 @@ import { LaunchCreateComponent } from './components/launch/launch-create/launch-
     ToolbarModule,
     SidebarModule,
     MenuModule,
-    ToastModule,
     HttpClientModule,
     InputTextModule,
     InputMaskModule,
-    CardModule,
     TableModule,
     FieldsetModule,
     TooltipModule,
-    CheckboxModule,
-    ConfirmDialogModule,
-    DialogModule
+    FormsModule
   ],
   providers: [
-    EventEmitterService
+    ShowSidebarService,
   ],
   bootstrap: [AppComponent]
 })

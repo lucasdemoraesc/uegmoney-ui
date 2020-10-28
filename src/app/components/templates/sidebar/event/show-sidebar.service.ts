@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EventEmitterService {
+export class ShowSidebarService {
 
   private sidebarSubject = new Subject<any>();
 
