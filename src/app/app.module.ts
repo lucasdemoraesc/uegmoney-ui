@@ -13,6 +13,9 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { TableModule } from 'primeng/table';
 import { FieldsetModule } from 'primeng/fieldset';
 import { TooltipModule } from 'primeng/tooltip';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CalendarModule } from 'primeng/calendar';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 import { ShowSidebarService } from './components/templates/sidebar/event/show-sidebar.service';
 
@@ -60,7 +63,10 @@ import { FormsModule } from '@angular/forms';
     TableModule,
     FieldsetModule,
     TooltipModule,
-    FormsModule
+    FormsModule,
+    InputTextareaModule,
+    CalendarModule,
+    SelectButtonModule
   ],
   providers: [
     ShowSidebarService,

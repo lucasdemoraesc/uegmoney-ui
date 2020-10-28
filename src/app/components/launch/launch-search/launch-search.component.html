@@ -7,11 +7,13 @@
 		</div>
 		<div class="p-field p-col-12 p-md-3">
 			<label>Vencimento de </label>
-			<p-inputMask mask="99/99/9999" placeholder="dd/mm/aaaa"></p-inputMask>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="false" placeholder="dd/mm/aaaa" *ngIf="mobile" [touchUI]="true"></p-calendar>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="false" placeholder="dd/mm/aaaa" *ngIf="!mobile" [touchUI]="false"></p-calendar>
 		</div>
 		<div class="p-field p-col-12 p-md-3">
 			<label>Até </label>
-			<p-inputMask mask="99/99/9999" placeholder="dd/mm/aaaa"></p-inputMask>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="false" placeholder="dd/mm/aaaa" *ngIf="mobile" [touchUI]="true"></p-calendar>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="false" placeholder="dd/mm/aaaa" *ngIf="!mobile" [touchUI]="false"></p-calendar>
 		</div>
 		<div class="p-field p-col-12 p-md-10"></div>
 		<div class="p-field p-col-12 p-md-2">
