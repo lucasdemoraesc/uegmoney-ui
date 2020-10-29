@@ -5,18 +5,3 @@ body {
 	color: #E2E2E5;
 	font-family: Helvetica,Verdana,Arial,sans-serif;
 }
-
-a:link {
-	color: #5DC8F9;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #43A5F4;
-	text-decoration: underline;
-}
-
-a:active {
-	color: #4381f4;
-	text-decoration: underline;
-}

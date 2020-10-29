@@ -38,7 +38,8 @@
                     </td>
                     <td>
                         <span class="p-column-title">Status</span>
-                        <a href="javascript:;" [pTooltip]="person.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top">
+                        <a href="javascript:;" [pTooltip]="person.ativo ? 'Desativar' : 'Ativar'" tooltipPosition="top"
+                        [style.color]="person.ativo ? '#42A5F4' : '#cf4046'">
                             {{ person.ativo ? 'Ativo' : 'Inativo' }}
                         </a>
                     </td>

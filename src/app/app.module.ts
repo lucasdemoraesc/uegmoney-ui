@@ -17,6 +17,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CalendarModule } from 'primeng/calendar';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 import { ShowSidebarService } from './components/templates/sidebar/event/show-sidebar.service';
 
@@ -68,7 +69,8 @@ import { FormsModule } from '@angular/forms';
     InputTextareaModule,
     CalendarModule,
     SelectButtonModule,
-    DropdownModule
+    DropdownModule,
+    InputNumberModule
   ],
   providers: [
     ShowSidebarService,
