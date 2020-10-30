@@ -1,0 +1,34 @@
+@media(min-width: 1200px) {
+	.container {
+		width: 95%;
+		margin: 0 auto auto;
+	}
+}
+
+@media(max-width: 767px) {
+	.link {
+		margin: 0 auto auto;
+	}
+}
+
+.link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2.5em;
+}
+
+a:link {
+	color: #5DC8F9;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #43A5F4;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #4381f4;
+	text-decoration: underline;
+}

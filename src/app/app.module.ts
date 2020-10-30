@@ -34,6 +34,7 @@ import { PersonListComponent } from './components/person/person-list/person-list
 import { PersonSearchComponent } from './components/person/person-search/person-search.component';
 import { LaunchCreateComponent } from './components/launch/launch-create/launch-create.component';
 import { FormsModule } from '@angular/forms';
+import { PersonCreateComponent } from './components/person/person-create/person-create.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FormsModule } from '@angular/forms';
     PersonComponent,
     PersonListComponent,
     PersonSearchComponent,
-    LaunchCreateComponent
+    LaunchCreateComponent,
+    PersonCreateComponent
   ],
   imports: [
     BrowserModule,
