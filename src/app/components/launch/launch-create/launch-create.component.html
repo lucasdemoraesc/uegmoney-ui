@@ -10,36 +10,45 @@
 		<div class="p-field p-col-12 p-md-8"></div>
 		<div class="p-field p-col-12 p-md-3">
 			<label>Vencimento</label>
-			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="mobile" [touchUI]="true"></p-calendar>
-			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="!mobile" [touchUI]="false"></p-calendar>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="mobile"
+				[touchUI]="true"></p-calendar>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="!mobile"
+				[touchUI]="false"></p-calendar>
 		</div>
 		<div class="p-field p-col-12 p-md-3">
 			<label>{{ tipo.value === 'RECEIVED' ? 'Recebimento' : 'Pagamento' }}</label>
-			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="mobile" [touchUI]="true"></p-calendar>
-			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="!mobile" [touchUI]="false"></p-calendar>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="mobile"
+				[touchUI]="true"></p-calendar>
+			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="!mobile"
+				[touchUI]="false"></p-calendar>
 		</div>
+
 		<div class="p-field p-col-12 p-md-9">
-			<label>Descrição {{ descricao.errors | json }}</label>
-			<input pInputText type="text" name="descricao" aria-describedby="descricao-help" ngModel #descricao="ngModel" required minlength="5">
-			<small id="descricao-help" class="p-invalid" *ngIf="descricao.hasError('required') && descricao.dirty">
-				Informe uma descrição.
-			</small>
-			<small id="descricao-help" class="p-invalid" *ngIf="descricao.hasError('minlength') && descricao.dirty">
-				Descrição deve possuir {{ descricao.errors.minlength.requiredLength }} ou mais caracteres.
-			</small>
+			<label>Descrição</label>
+			<input pInputText type="text" name="descricao" aria-describedby="descricao-help" ngModel
+				#descricao="ngModel" required minlength="5">
+
+			<app-messages id="descricao-help" [control]="descricao" error="required" text="Informe uma descrição.">
+			</app-messages>
+			<app-messages id="descricao-help" [control]="descricao" error="minlength"
+				text="Descrição deve possuir {{ descricao.errors?.minlength?.requiredLength }} ou mais caracteres.">
+			</app-messages>
 		</div>
+
 		<div class="p-field p-col-12 p-md-3">
 			<label>Valor</label>
 			<p-inputNumber name="valor" #valor ngModel mode="currency" currency="BRL" locale="pt-BR"
-			placeholder="R$ 0,00" (click)="$event.target.select()"></p-inputNumber>
+				placeholder="R$ 0,00" (click)="$event.target.select()"></p-inputNumber>
 		</div>
 		<div class="p-field p-col-12 p-md-6">
 			<label>Categoria</label>
-			<p-dropdown [options]="categorias" placeholder="Selecione uma categoria" optionLabel="label" [showClear]="true"></p-dropdown>
+			<p-dropdown [options]="categorias" placeholder="Selecione uma categoria" optionLabel="label"
+				[showClear]="true"></p-dropdown>
 		</div>
 		<div class="p-field p-col-12 p-md-6">
 			<label>Pessoa</label>
-			<p-dropdown [options]="pessoas" [filter]="true" placeholder="Selecione uma pessoa" optionLabel="label" [showClear]="true"></p-dropdown>
+			<p-dropdown [options]="pessoas" [filter]="true" placeholder="Selecione uma pessoa" optionLabel="label"
+				[showClear]="true"></p-dropdown>
 		</div>
 		<div class="p-field p-col-12">
 			<label>Observação</label>
