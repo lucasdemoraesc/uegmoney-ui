@@ -18,6 +18,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 import { ShowSidebarService } from './components/templates/sidebar/event/show-sidebar.service';
 
@@ -35,6 +37,7 @@ import { PersonSearchComponent } from './components/person/person-search/person-
 import { LaunchCreateComponent } from './components/launch/launch-create/launch-create.component';
 import { FormsModule } from '@angular/forms';
 import { PersonCreateComponent } from './components/person/person-create/person-create.component';
+import { MessagesComponent } from './components/templates/messages/messages.component';
 
 
 @NgModule({
@@ -51,7 +54,8 @@ import { PersonCreateComponent } from './components/person/person-create/person-
     PersonListComponent,
     PersonSearchComponent,
     LaunchCreateComponent,
-    PersonCreateComponent
+    PersonCreateComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +76,9 @@ import { PersonCreateComponent } from './components/person/person-create/person-
     CalendarModule,
     SelectButtonModule,
     DropdownModule,
-    InputNumberModule
+    InputNumberModule,
+    MessagesModule,
+    MessageModule
   ],
   providers: [
     ShowSidebarService,

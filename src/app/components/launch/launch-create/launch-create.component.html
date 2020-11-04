@@ -19,12 +19,19 @@
 			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" *ngIf="!mobile" [touchUI]="false"></p-calendar>
 		</div>
 		<div class="p-field p-col-12 p-md-9">
-			<label>Descrição</label>
-			<input pInputText type="text">
+			<label>Descrição {{ descricao.errors | json }}</label>
+			<input pInputText type="text" name="descricao" aria-describedby="descricao-help" ngModel #descricao="ngModel" required minlength="5">
+			<small id="descricao-help" class="p-invalid" *ngIf="descricao.hasError('required') && descricao.dirty">
+				Informe uma descrição.
+			</small>
+			<small id="descricao-help" class="p-invalid" *ngIf="descricao.hasError('minlength') && descricao.dirty">
+				Descrição deve possuir {{ descricao.errors.minlength.requiredLength }} ou mais caracteres.
+			</small>
 		</div>
 		<div class="p-field p-col-12 p-md-3">
 			<label>Valor</label>
-			<p-inputNumber mode="currency" currency="BRL" locale="pt-BR" placeholder="R$ 0,00"></p-inputNumber>
+			<p-inputNumber name="valor" #valor ngModel mode="currency" currency="BRL" locale="pt-BR"
+			placeholder="R$ 0,00" (click)="$event.target.select()"></p-inputNumber>
 		</div>
 		<div class="p-field p-col-12 p-md-6">
 			<label>Categoria</label>
