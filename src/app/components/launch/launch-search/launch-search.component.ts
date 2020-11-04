@@ -7,13 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaunchSearchComponent implements OnInit {
 
-  mobile: Boolean;
-
   constructor() { }
 
   ngOnInit(): void {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
-      this.mobile = true;
-    }
   };
 }
