@@ -1,67 +1,61 @@
-<div class="p-grid">
-    <div class="p-col-12">
-        <p-table [value]="lancamentos" [columns]="cols" [paginator]="true" [rows]="5"
-            styleClass="p-datatable-responsive-demo">
-            <ng-template pTemplate="caption">
-                <div class="p-d-flex p-ai-center p-jc-between">
-                    Lançamentos
-                    <div>
-                        <button pButton style="margin-right: 0.5em;" icon="pi pi-plus" pTooltip="Cadastrar"
-                            tooltipPosition="top" routerLink="/launch/create"></button>
-                        <button pButton icon="pi pi-refresh" pTooltip="Recarregar" tooltipPosition="top"></button>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>Descrição</th>
-                    <th>Pessoa</th>
-                    <th class="col-data-header">Pagamento</th>
-                    <th class="col-data-header">Vencimento</th>
-                    <th class="col-valor-header">Valor</th>
-                    <th class="acoes">
-                        Ações
-                    </th>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-lancamento>
-                <tr>
-                    <td>
-                        <span class="p-column-title">Descrição</span>
-                        {{ lancamento.descricao }}
-                    </td>
-                    <td>
-                        <span class="p-column-title">Pessoa</span>
-                        {{ lancamento.pessoa }}
-                    </td>
-                    <td class="col-data">
-                        <span class="p-column-title">Vencimento</span>
-                        {{ lancamento.dataVencimento | date: 'dd/MM/yyyy' }}
-                    </td>
-                    <td class="col-data">
-                        <span class="p-column-title">Pagamento</span>
-                        {{ lancamento.dataPagamento | date: 'dd/MM/yyyy' }}
-                    </td>
-                    <td class="col-valor">
-                        <span class="p-column-title">Valor</span>
-                        <span [style.color]="lancamento.tipo === 'DESPESA' ? '#cf4046' : '#42A5F4'">
-                            <b>{{ lancamento.valor | currency: 'BRL' }}</b>
-                        </span>
-                    </td>
-                    <td class="acoes">
-                        <button pButton icon="pi pi-pencil" style="margin-right: 0.5em;" pTooltip="Editar"
-                            tooltipPosition="top"></button>
-                        <button pButton icon="pi pi-trash" style="color: firebrick;" pTooltip="Excluir"
-                            tooltipPosition="top"></button>
-                    </td>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="summary">
-                <div class="p-d-flex p-ai-center p-jc-between">
-                    Total de Lançamentos: {{lancamentos ? lancamentos.length : 0 }}
-                </div>
-            </ng-template>
-        </p-table>
-
-    </div>
-</div>
+<p-table [value]="lancamentos" [paginator]="true" [rows]="5" styleClass="p-datatable-responsive-demo">
+    <ng-template pTemplate="caption">
+        <div class="p-d-flex p-ai-center p-jc-between">
+            Lançamentos
+            <div>
+                <button pButton style="margin-right: 0.5em;" icon="pi pi-plus" pTooltip="Cadastrar"
+                    tooltipPosition="top" routerLink="/launch/create"></button>
+                <button pButton icon="pi pi-refresh" pTooltip="Recarregar" tooltipPosition="top"></button>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Descrição</th>
+            <th>Pessoa</th>
+            <th>Pagamento</th>
+            <th>Vencimento</th>
+            <th>Valor</th>
+            <th class="acoes">
+                Ações
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-lancamento>
+        <tr>
+            <td>
+                <span class="p-column-title">Descrição</span>
+                {{ lancamento.descricao }}
+            </td>
+            <td>
+                <span class="p-column-title">Pessoa</span>
+                {{ lancamento.pessoa }}
+            </td>
+            <td class="col-data">
+                <span class="p-column-title">Vencimento</span>
+                {{ lancamento.dataVencimento | date: 'dd/MM/yyyy' }}
+            </td>
+            <td class="col-data">
+                <span class="p-column-title">Pagamento</span>
+                {{ lancamento.dataPagamento | date: 'dd/MM/yyyy' }}
+            </td>
+            <td class="col-valor">
+                <span class="p-column-title">Valor</span>
+                <span [style.color]="lancamento.tipo === 'DESPESA' ? '#cf4046' : '#42A5F4'">
+                    <b>{{ lancamento.valor | currency: 'BRL' }}</b>
+                </span>
+            </td>
+            <td class="acoes">
+                <button pButton icon="pi pi-pencil" style="margin-right: 0.5em;" pTooltip="Editar"
+                    tooltipPosition="top"></button>
+                <button pButton icon="pi pi-trash" style="color: firebrick;" pTooltip="Excluir"
+                    tooltipPosition="top"></button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="p-d-flex p-ai-center p-jc-between">
+            Total de Lançamentos: {{lancamentos ? lancamentos.length : 0 }}
+        </div>
+    </ng-template>
+</p-table>

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WellcomeMessage } from './model/wellcome-message.model';
-import { WellcomeService } from './service/wellcome.service';
 
 @Component({
   selector: 'app-wellcome',
@@ -11,9 +9,9 @@ export class WellcomeComponent implements OnInit {
 
   hour: any;
   image: string;
-  message: WellcomeMessage;
+  message: string;
 
-  constructor(private wellcomeService: WellcomeService) { }
+  constructor() { }
 
   ngOnInit(): void {
     var tmp = new Date();
@@ -21,9 +19,7 @@ export class WellcomeComponent implements OnInit {
 
     this.changeImage();
 
-    this.wellcomeService.getMessage().subscribe(message => {
-      this.message = message
-    });
+    this.message = "Bem Vindo(a)";
   }
 
   private changeImage() {
