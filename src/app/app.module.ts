@@ -35,7 +35,7 @@ import { PersonSearchComponent } from './components/person/person-search/person-
 import { LaunchCreateComponent } from './components/launch/launch-create/launch-create.component';
 import { FormsModule } from '@angular/forms';
 import { PersonCreateComponent } from './components/person/person-create/person-create.component';
-import { MessagesComponent } from './components/templates/messages/messages.component';
+import { MessagesComponent } from './components/templates/utils/messages/messages.component';
 
 
 @NgModule({

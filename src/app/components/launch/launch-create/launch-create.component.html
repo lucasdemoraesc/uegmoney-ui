@@ -1,67 +1,65 @@
-<div class="container">
-	<form #launchForm="ngForm" class="p-fluid p-formgrid p-grid" autocomplete="off">
-		<div class="p-field p-col-12">
-			<h1>Novo Lançamento</h1>
-		</div>
+<form #launchForm="ngForm" class="p-fluid p-formgrid p-grid" autocomplete="off">
+	<div class="p-field p-col-12">
+		<h1>Novo Lançamento</h1>
+	</div>
 
-		<div class="p-field p-col-12 p-md-3">
-			<p-selectButton [options]="tipos" #tipo></p-selectButton>
-		</div>
-		<div class="p-field p-col-12 p-md-8"></div>
-		<div class="p-field p-col-12 p-md-3">
-			<label>Vencimento</label>
-			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" [touchUI]="true"
-				name="vencimento" ngModel #vencimento="ngModel" required aria-describedby="vencimento-help">
-			</p-calendar>
-			<app-messages id="vencimento-help" [control]="vencimento" error="required" text="Informe uma data.">
-			</app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-3">
-			<label>{{ tipo.value === 'RECEIVED' ? 'Recebimento' : 'Pagamento' }}</label>
-			<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" [touchUI]="true"
-				name="pagamento" ngModel #pagamento="ngModel"></p-calendar>
-		</div>
+	<div class="p-field p-col-12 p-md-3">
+		<p-selectButton [options]="tipos" #tipo></p-selectButton>
+	</div>
+	<div class="p-field p-col-12 p-md-8"></div>
+	<div class="p-field p-col-12 p-md-3">
+		<label>Vencimento</label>
+		<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" [touchUI]="isMobile" name="vencimento"
+			ngModel #vencimento="ngModel" required aria-describedby="vencimento-help">
+		</p-calendar>
+		<app-messages id="vencimento-help" [control]="vencimento" error="required" text="Informe uma data.">
+		</app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-3">
+		<label>{{ tipo.value === 'RECEIVED' ? 'Recebimento' : 'Pagamento' }}</label>
+		<p-calendar dateFormat="dd/mm/yy" [showIcon]="true" placeholder="dd/mm/aaaa" [touchUI]="isMobile" name="pagamento"
+			ngModel #pagamento="ngModel"></p-calendar>
+	</div>
 
-		<div class="p-field p-col-12 p-md-9">
-			<label>Descrição</label>
-			<input pInputText type="text" name="descricao" aria-describedby="descricao-help" ngModel
-				#descricao="ngModel" required minlength="5">
+	<div class="p-field p-col-12 p-md-9">
+		<label>Descrição</label>
+		<input pInputText type="text" name="descricao" aria-describedby="descricao-help" ngModel #descricao="ngModel"
+			required minlength="5">
 
-			<app-messages id="descricao-help" [control]="descricao" error="required" text="Informe uma descrição.">
-			</app-messages>
-			<app-messages id="descricao-help" [control]="descricao" error="minlength"
-				text="Descrição deve possuir no mínimo {{ descricao.errors?.minlength?.requiredLength }} caracteres.">
-			</app-messages>
-		</div>
+		<app-messages id="descricao-help" [control]="descricao" error="required" text="Informe uma descrição.">
+		</app-messages>
+		<app-messages id="descricao-help" [control]="descricao" error="minlength"
+			text="Descrição deve possuir no mínimo {{ descricao.errors?.minlength?.requiredLength }} caracteres.">
+		</app-messages>
+	</div>
 
-		<div class="p-field p-col-12 p-md-3">
-			<label>Valor</label>
-			<p-inputNumber name="valor" ngModel #valor="ngModel" required mode="currency" currency="BRL" locale="pt-BR"
-				placeholder="R$ 0,00" (click)="$event.target.select()" aria-describedby="valor-help"></p-inputNumber>
-			<app-messages id="valor-help" [control]="valor" error="required" text="Informe um valor."></app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-6">
-			<label>Categoria</label>
-			<p-dropdown [options]="categorias" placeholder="Selecione uma categoria" optionLabel="label"
-				name="categoria" ngModel #categoria="ngModel" required></p-dropdown>
-		</div>
-		<div class="p-field p-col-12 p-md-6">
-			<label>Pessoa</label>
-			<p-dropdown [options]="pessoas" [filter]="true" placeholder="Selecione uma pessoa" optionLabel="label"
-				name="pessoa" ngModel #pessoa="ngModel" required></p-dropdown>
-		</div>
-		<div class="p-field p-col-12">
-			<label>Observação</label>
-			<textarea rows="4" type="text" pInputTextarea name="observacao" ngModel #observacao="ngModel"></textarea>
-		</div>
-		<div class="p-field p-col-12 p-md-1">
-			<button pButton label="Salvar" type="submit" [disabled]="!launchForm.valid"></button>
-		</div>
-		<div class="p-field p-col-12 p-md-1">
-			<button pButton label="Novo" type="submit" class="p-button-info"></button>
-		</div>
-		<div class="p-field p-col-12 p-md-6" class="link">
-			<a href="javascript:;">Voltar para a pesquisa</a>
-		</div>
-	</form>
-</div>
+	<div class="p-field p-col-12 p-md-3">
+		<label>Valor</label>
+		<p-inputNumber name="valor" ngModel #valor="ngModel" required mode="currency" currency="BRL" locale="pt-BR"
+			placeholder="R$ 0,00" (click)="$event.target.select()" aria-describedby="valor-help"></p-inputNumber>
+		<app-messages id="valor-help" [control]="valor" error="required" text="Informe um valor."></app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-6">
+		<label>Categoria</label>
+		<p-dropdown [options]="categorias" placeholder="Selecione uma categoria" optionLabel="label" name="categoria"
+			ngModel #categoria="ngModel" required></p-dropdown>
+	</div>
+	<div class="p-field p-col-12 p-md-6">
+		<label>Pessoa</label>
+		<p-dropdown [options]="pessoas" [filter]="true" placeholder="Selecione uma pessoa" optionLabel="label"
+			name="pessoa" ngModel #pessoa="ngModel" required></p-dropdown>
+	</div>
+	<div class="p-field p-col-12">
+		<label>Observação</label>
+		<textarea rows="4" type="text" pInputTextarea name="observacao" ngModel #observacao="ngModel"></textarea>
+	</div>
+	<div class="p-field p-col-12 p-md-1">
+		<button pButton label="Salvar" type="submit" [disabled]="!launchForm.valid"></button>
+	</div>
+	<div class="p-field p-col-12 p-md-1">
+		<button pButton label="Novo" type="submit" class="p-button-info"></button>
+	</div>
+	<div class="p-field p-col-12 p-md-6" class="link">
+		<a href="javascript:;">Voltar para a pesquisa</a>
+	</div>
+</form>

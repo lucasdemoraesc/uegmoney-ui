@@ -1,10 +1,3 @@
-@media(min-width: 1200px) {
-	.container {
-		width: 95%;
-		margin: 0 auto auto;
-	}
-}
-
 p-fieldset {
 	margin: auto 1em auto 1em;
 }

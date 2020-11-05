@@ -1,3 +1,4 @@
+import { IsMobileService } from './../../templates/utils/is-mobile.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./launch-search.component.css']
 })
 export class LaunchSearchComponent implements OnInit {
+
+  isMobile: Boolean;
 
   lancamentos = [
     {
@@ -40,7 +43,9 @@ export class LaunchSearchComponent implements OnInit {
 
   cols: any[];
 
-  constructor() { }
+  constructor(private isMobileService: IsMobileService) {
+    this.isMobile = isMobileService.checkPlatform();
+  }
 
   ngOnInit(): void {
 

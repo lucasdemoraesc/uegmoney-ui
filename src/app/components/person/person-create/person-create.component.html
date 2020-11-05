@@ -1,81 +1,79 @@
-<div class="container">
-	<form #personForm="ngForm" class="p-fluid p-formgrid p-grid" autocomplete="off">
-		<div class="p-field p-col-12">
-			<h1>Nova Pessoa</h1>
-		</div>
+<form #personForm="ngForm" class="p-fluid p-formgrid p-grid" autocomplete="off">
+	<div class="p-field p-col-12">
+		<h1>Nova Pessoa</h1>
+	</div>
 
-		<div class="p-field p-col-12 p-md-12">
-			<label>Nome</label>
-			<input pInputText type="text" name="nome" ngModel #nome="ngModel" required minlength="3"
-				aria-describedby="nome-help">
-			<app-messages id="nome-help" [control]="nome" error="required" text="Informe um nome."></app-messages>
-			<app-messages id="nome-help" [control]="nome" error="minlength"
-				text="Nome deve possuir no mínimo {{ nome.errors?.minlength?.requiredLength }} caracteres.">
-			</app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-9">
-			<label>Logradouro</label>
-			<input pInputText type="text" name="logradouro" ngModel #logradouro="ngModel" required minlength="5"
-				aria-describedby="logradouro-help">
-			<app-messages id="logradouro-help" [control]="logradouro" error="required" text="Informe o logradouro.">
-			</app-messages>
-			<app-messages id="logradouro-help" [control]="logradouro" error="minlength"
-				text="Logradouro deve possuir no mínimo {{ logradouro.errors?.minlength?.requiredLength }} caracteres.">
-			</app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-3">
-			<label>Número</label>
-			<p-inputNumber name="numero" ngModel #numero="ngModel" required aria-describedby="numero-help"
-				(click)="$event.target.select()">
-			</p-inputNumber>
-			<app-messages id="numero-help" [control]="numero" error="required" text="Informe o número."></app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-4">
-			<label>Complemento</label>
-			<input pInputText type="text" name="complemento" ngModel #complemento="ngModel">
-		</div>
-		<div class="p-field p-col-12 p-md-4">
-			<label>Bairro</label>
-			<input pInputText type="text" name="bairro" ngModel #bairro="ngModel" required minlength="5"
-				aria-describedby="bairro-help">
-			<app-messages id="bairro-help" [control]="bairro" error="required" text="Informe o bairro."></app-messages>
-			<app-messages id="bairro-help" [control]="bairro" error="minlength"
-				text="Bairro deve possuir no mínimo {{ bairro.errors?.minlength?.requiredLength }} caracteres.">
-			</app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-4">
-			<label>CEP</label>
-			<p-inputMask mask="99999-999" name="cep" ngModel #cep="ngModel" required aria-describedby="cep-help">
-			</p-inputMask>
-			<app-messages id="cep-help" [control]="cep" error="required" text="Informe o CEP."></app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-6">
-			<label>Cidade</label>
-			<input pInputText type="text" name="cidade" ngModel #cidade="ngModel" required minlength="5"
-				aria-describedby="cidade-help">
-			<app-messages id="cidade-help" [control]="cidade" error="required" text="Informe a cidade."></app-messages>
-			<app-messages id="cidade-help" [control]="cidade" error="minlength"
-				text="Cidade deve possuir {{ cidade.errors?.minlength?.requiredLength }} ou mais caracteres.">
-			</app-messages>
-		</div>
-		<div class="p-field p-col-12 p-md-6">
-			<label>Estado</label>
-			<input pInputText type="text" name="estado" ngModel #estado="ngModel" required minlength="2"
-				aria-describedby="estado-help">
-			<app-messages id="estado-help" [control]="estado" error="required" text="Informe o estado"></app-messages>
-			<app-messages id="estado-help" [control]="estado" error="minlength"
-				text="Estado deve possuir {{ estado.errors?.minlength?.requiredLength }} ou mais caracteres.">
-			</app-messages>
-		</div>
+	<div class="p-field p-col-12 p-md-12">
+		<label>Nome</label>
+		<input pInputText type="text" name="nome" ngModel #nome="ngModel" required minlength="3"
+			aria-describedby="nome-help">
+		<app-messages id="nome-help" [control]="nome" error="required" text="Informe um nome."></app-messages>
+		<app-messages id="nome-help" [control]="nome" error="minlength"
+			text="Nome deve possuir no mínimo {{ nome.errors?.minlength?.requiredLength }} caracteres.">
+		</app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-9">
+		<label>Logradouro</label>
+		<input pInputText type="text" name="logradouro" ngModel #logradouro="ngModel" required minlength="5"
+			aria-describedby="logradouro-help">
+		<app-messages id="logradouro-help" [control]="logradouro" error="required" text="Informe o logradouro.">
+		</app-messages>
+		<app-messages id="logradouro-help" [control]="logradouro" error="minlength"
+			text="Logradouro deve possuir no mínimo {{ logradouro.errors?.minlength?.requiredLength }} caracteres.">
+		</app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-3">
+		<label>Número</label>
+		<p-inputNumber name="numero" ngModel #numero="ngModel" required aria-describedby="numero-help"
+			(click)="$event.target.select()">
+		</p-inputNumber>
+		<app-messages id="numero-help" [control]="numero" error="required" text="Informe o número."></app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-4">
+		<label>Complemento</label>
+		<input pInputText type="text" name="complemento" ngModel #complemento="ngModel">
+	</div>
+	<div class="p-field p-col-12 p-md-4">
+		<label>Bairro</label>
+		<input pInputText type="text" name="bairro" ngModel #bairro="ngModel" required minlength="5"
+			aria-describedby="bairro-help">
+		<app-messages id="bairro-help" [control]="bairro" error="required" text="Informe o bairro."></app-messages>
+		<app-messages id="bairro-help" [control]="bairro" error="minlength"
+			text="Bairro deve possuir no mínimo {{ bairro.errors?.minlength?.requiredLength }} caracteres.">
+		</app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-4">
+		<label>CEP</label>
+		<p-inputMask mask="99999-999" name="cep" ngModel #cep="ngModel" required aria-describedby="cep-help">
+		</p-inputMask>
+		<app-messages id="cep-help" [control]="cep" error="required" text="Informe o CEP."></app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-6">
+		<label>Cidade</label>
+		<input pInputText type="text" name="cidade" ngModel #cidade="ngModel" required minlength="5"
+			aria-describedby="cidade-help">
+		<app-messages id="cidade-help" [control]="cidade" error="required" text="Informe a cidade."></app-messages>
+		<app-messages id="cidade-help" [control]="cidade" error="minlength"
+			text="Cidade deve possuir {{ cidade.errors?.minlength?.requiredLength }} ou mais caracteres.">
+		</app-messages>
+	</div>
+	<div class="p-field p-col-12 p-md-6">
+		<label>Estado</label>
+		<input pInputText type="text" name="estado" ngModel #estado="ngModel" required minlength="2"
+			aria-describedby="estado-help">
+		<app-messages id="estado-help" [control]="estado" error="required" text="Informe o estado"></app-messages>
+		<app-messages id="estado-help" [control]="estado" error="minlength"
+			text="Estado deve possuir {{ estado.errors?.minlength?.requiredLength }} ou mais caracteres.">
+		</app-messages>
+	</div>
 
-		<div class="p-field p-col-12 p-md-1">
-			<button pButton label="Salvar" type="submit" [disabled]="!personForm.valid"></button>
-		</div>
-		<div class="p-field p-col-12 p-md-1">
-			<button pButton label="Novo" type="submit" class="p-button-info"></button>
-		</div>
-		<div class="p-field p-col-12 p-md-6" class="link">
-			<a href="javascript:;">Voltar para a pesquisa</a>
-		</div>
-	</form>
-</div>
+	<div class="p-field p-col-12 p-md-1">
+		<button pButton label="Salvar" type="submit" [disabled]="!personForm.valid"></button>
+	</div>
+	<div class="p-field p-col-12 p-md-1">
+		<button pButton label="Novo" type="submit" class="p-button-info"></button>
+	</div>
+	<div class="p-field p-col-12 p-md-6" class="link">
+		<a href="javascript:;">Voltar para a pesquisa</a>
+	</div>
+</form>

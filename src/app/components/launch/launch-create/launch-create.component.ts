@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IsMobileService } from './../../templates/utils/is-mobile.service';
 
 @Component({
   selector: 'app-launch-create',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./launch-create.component.css']
 })
 export class LaunchCreateComponent implements OnInit {
+
+  isMobile: Boolean;
 
   tipos = [
     { label: "Receita", value: "RECEIVED" },
@@ -25,7 +28,9 @@ export class LaunchCreateComponent implements OnInit {
     { label: "Karine Moraes", value: 2 }
   ]
 
-  constructor() { }
+  constructor(private isMobileService: IsMobileService) {
+    this.isMobile = this.isMobileService.checkPlatform();
+  }
 
   ngOnInit(): void {
 
